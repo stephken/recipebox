@@ -1,0 +1,12 @@
+<div>
+
+    <h1>{{recipe}}</h1>
+
+
+    <h3>Time required: </h3><p>{{ recipe.time_required }}</p>
+    <h3>Description: </h3><p>{{ recipe.description }}</p>
+    <h3>Instructions: </h3><p>{{ recipe.instructions }}</p>
+
+    <h4>Author: <a href="/author/{{recipe.author.id}}">{{recipe.author}}</a></h4>
+
+</div>

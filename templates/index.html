@@ -1,0 +1,15 @@
+<html>
+
+<body>
+<h1>Welcome to Recipebox</h1>
+
+<h3>Recipes</h3>
+{% for recipe in recipes%}
+
+<ul style="list-style: none;">
+<li><a href="/recipe/{{recipe.id}}/">{{recipe.title}}<a></li>
+</ul>
+
+{% endfor %}
+</body>
+</html>
