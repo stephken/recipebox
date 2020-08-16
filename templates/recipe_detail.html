@@ -1,16 +1,26 @@
-<div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
 
-    <h1>{{recipe}}</h1>
+    <div>
+        <h1>{{recipe}}</h1>
+    
+        <h3>Time required:</h3>
+        <p>{{ recipe.time_required }}</p>
+        <h3>Description:</h3>
+        <p>{{ recipe.description }}</p>
+        <h3>Instructions:</h3>
+        <p>{{ recipe.instructions }}</p>
+    
+        <h4>
+            Author: <a href="/author/{{recipe.author.id}}">{{recipe.author}}</a>
+        </h4>
+    </div>
 
-
-    <h3>Time required: </h3><p>{{ recipe.time_required }}</p>
-    <h3>Description: </h3><p>{{ recipe.description }}</p>
-    <h3>Instructions: </h3><p>{{ recipe.instructions }}</p>
-
-    <h4>Author: <a href="/author/{{recipe.author.id}}">{{recipe.author}}</a></h4>
-
-</div>
-
-"""
-first commit
-"""
+</body>
+</html>

@@ -1,20 +1,39 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
 <body>
-<h1>Welcome to Recipebox</h1>
+    <h1>Welcome to Recipebox</h1>
 
-<h3>Recipes</h3>
-{% for recipe in recipes%}
+    {% if user.is_authenticated %}
+        <h2>Welcome, {{ request.user.author.name }}!</h2>
+    {% else %}
+        <h2>Please Log In or Sign Up.</h2>
+    {% endif %}
 
-<ul style="list-style: none;">
-<li><a href="/recipe/{{recipe.id}}/">{{recipe.title}}<a></li>
-</ul>
-
-{% endfor %}
+    <h3>Recipes</h3>
+    {% for recipe in recipes %}
+        <ul style="list-style: none;">
+        <li><a href="/recipe/{{ recipe.id }}/">{{ recipe.title }}<a></li>
+        </ul>
+    {% endfor %}
+<br>
+    {% if user.is_staff %}
+        <button><a href="/newauthor/">Add New Author</a></button>
+        <button><a href="/newstaffrecipe/">Add New Recipe</a></button>
+        <button><a href="/logout/">Log Out</a></button>
+    {% elif user.is_authenticated %}
+        <button><a href="/error/">Add New Author</a></button>
+        <button><a href="/newrecipe/">Add New Recipe</a></button>
+        <button><a href="/logout/">Log Out</a></button>
+    {% else %}
+        <button><a href="/newauthor/">Add New Author</a></button>
+        <button><a href="/newstaffrecipe/">Add New Recipe</a></button>
+        <button><a href="/login/">Log In</a></button>
+        <button><a href="/signup/">Sign Up</a></button>
+    {% endif %}
 </body>
 </html>
-
-
-"""
-first commit
-"""

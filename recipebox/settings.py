@@ -114,7 +114,4 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 
-
-"""
-first commit
-"""
+LOGIN_URL = "/login/"
