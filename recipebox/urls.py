@@ -24,3 +24,8 @@ urlpatterns = [
     path('recipe/<int:recipe_id>/', recipe_view),
     path('admin/', admin.site.urls)
 ]
+
+
+"""
+first commit
+"""

@@ -16,3 +16,8 @@ def author_view(request, author_id):
 def recipe_view(request, recipe_id):
     my_recipe = Recipe.objects.filter(id=recipe_id).first()
     return render(request, 'recipe_detail.html', {"recipe": my_recipe})
+
+
+"""
+first commit
+"""
