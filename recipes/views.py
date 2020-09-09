@@ -4,7 +4,6 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib.admin.views.decorators import staff_member_required
 
-
 from recipes.models import Author, Recipe
 from recipes.forms import RecipeForm, StaffRecipeForm, AuthorForm, LoginForm, SignupForm
 
