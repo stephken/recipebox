@@ -1,15 +1,18 @@
-<html>
-
-<body>
-<h1>Welcome to Recipebox</h1>
-
-<h3>Recipes</h3>
-{% for recipe in recipes%}
-
-<ul style="list-style: none;">
-<li><a href="/recipe/{{recipe.id}}/">{{recipe.title}}<a></li>
+<h1>Recipe Box</h1>
+<h2>User: {{ request.user }}</h2>
+<div>
+  <a href="/login/">login</a>
+  <a href="/logout/">logout</a>
+</div>
+<br />
+<a href="/addrecipe/">New Recipe</a>
+<br />
+<a href="/addauthor/">New Author</a>
+<h2>Recipes</h2>
+<ul>
+  {% for recipe in recipes %}
+    <li>
+      <a href="/recipe/{{ recipe.id }}">{{ recipe.title }}</a>
+    </li>
+  {% endfor %}
 </ul>
-
-{% endfor %}
-</body>
-</html>
